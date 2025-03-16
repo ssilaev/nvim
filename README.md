@@ -6,7 +6,19 @@ This repository is updated from time to time..
 
 ## How to install
 * `git clone https://github.com/enodllew/nvim.git ~/.config/nvim`
-* Just run `nvim`
+* To keep the libraries wheel, setuptools, pip, and neovim up to date, I use
+[uv](https://github.com/astral-sh/uv) and a separate environment.
+
+  You need to set the full path in the `$PYTHON_NVIM_VENV` variable to your
+  interpreter that will be used by neovim.
+
+  For example, I use my `~/.zshrc` and put the variable there: 
+
+  ```shell
+  export PYTHON_NVIM_VENV="/home/user/.local/share/nvim/py-plugs/.venv/bin/python"
+  ```
+
+* That's it, now just run `nvim` and wait a bit.
 
 [Lazy.nvim](https://github.com/folke/lazy.nvim) is used as a dependency manager.
 
