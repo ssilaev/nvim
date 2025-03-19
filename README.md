@@ -12,7 +12,7 @@ This repository is updated from time to time..
   You need to set the full path in the `$PYTHON_NVIM_VENV` variable to your
   interpreter that will be used by neovim.
 
-  For example, I use my `~/.zshrc` and put the variable there: 
+  For example, I use my `~/.zshrc` and put the variable there:
 
   ```shell
   export PYTHON_NVIM_VENV="/home/user/.local/share/nvim/py-plugs/.venv/bin/python"
@@ -23,9 +23,17 @@ This repository is updated from time to time..
 [Lazy.nvim](https://github.com/folke/lazy.nvim) is used as a dependency manager.
 
 ## Requirements
-* `npm`
-* `fd`
-* `fzf`
+* `git`
+* `make`
+* `unzip`
+* `gcc`
 * `ripgrep`
+* `fzf`
+* `npm`
+* [Nerd Font](https://www.nerdfonts.com/): optional, provides various icons
+(`vim.g.have_nerd_font` in `init.lua`).
+* `python`
+* `go`
+* and any language you need.
 
-I think that's all.
+I believe that is all.
