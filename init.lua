@@ -4,12 +4,8 @@
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
--- Color scheme
-vim.cmd([[colorscheme gruvbox]])
--- vim.cmd([[colorscheme shine]])
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = true
+vim.g.have_nerd_font = false
 
 -- Enable mode keys in RU layout
 vim.opt.langmap =
@@ -868,6 +864,10 @@ end)
 vim.keymap.set("n", "<C-n>", function()
 	harpoon:list():select(3)
 end)
+
+-- Color scheme
+-- vim.cmd([[colorscheme shine]])
+vim.cmd([[colorscheme gruvbox]])
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
