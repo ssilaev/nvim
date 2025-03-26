@@ -292,9 +292,11 @@ require("lazy").setup({
 			vim.keymap.set("n", "<space>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<space>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
 			vim.keymap.set("n", "<space>dd", vim.diagnostic.disable, { desc = "[D]iagnostics [D]isable" })
+			vim.keymap.set("n", "<space>vd", vim.diagnostic.open_float, { desc = "[V]iew [D]iagnostic" })
 			vim.keymap.set("n", "<space>de", vim.diagnostic.enable, { desc = "[D]iagnostics [E]nable" })
 			vim.keymap.set("n", "<space>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<space>sf", builtin.lsp_document_symbols, { noremap = true, silent = true })
+			vim.keymap.set("n", "<space>st", "<cmd>TodoTelescope<CR>", { noremap = true, silent = true })
 			vim.keymap.set("n", "<space><space>", builtin.buffers, { desc = "[\\] Find existing buffers" })
 
 			-- It's also possible to pass additional configuration options.
@@ -866,8 +868,8 @@ vim.keymap.set("n", "<C-n>", function()
 end)
 
 -- Color scheme
--- vim.cmd([[colorscheme shine]])
-vim.cmd([[colorscheme gruvbox]])
+vim.o.background = "light" -- or "dark" for dark mode
+vim.cmd.colorscheme("gruvbox")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
