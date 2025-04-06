@@ -1,7 +1,7 @@
 # My neovim config
-![](https://img.shields.io/github/repo-size/enodllew/nvim)
-![](https://img.shields.io/github/last-commit/enodllew/nvim)
-![](https://img.shields.io/github/languages/top/enodllew/nvim)
+![](https://img.shields.io/github/repo-size/ssilaev/nvim)
+![](https://img.shields.io/github/last-commit/ssilaev/nvim)
+![](https://img.shields.io/github/languages/top/ssilaev/nvim)
 
 
 This config inspired by and partially based on [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim).
@@ -9,7 +9,7 @@ This config inspired by and partially based on [kickstart.nvim](https://github.c
 This repository is updated from time to time..
 
 ## How to install
-* `git clone https://github.com/enodllew/nvim.git ~/.config/nvim`
+* `git clone https://github.com/ssilaev/nvim.git ~/.config/nvim`
 * To keep the libraries wheel, setuptools, pip, and neovim up to date, I use
 [uv](https://github.com/astral-sh/uv) and a separate environment.
 

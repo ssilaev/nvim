@@ -868,7 +868,7 @@ vim.keymap.set("n", "<C-n>", function()
 end)
 
 -- Color scheme
-vim.o.background = "light" -- or "dark" for dark mode
+vim.o.background = "dark" -- or "light" for dark mode
 vim.cmd.colorscheme("gruvbox")
 
 -- The line beneath this is called `modeline`. See `:help modeline`
