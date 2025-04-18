@@ -4,6 +4,12 @@
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
+if vim.g.vscode then
+	-- Load VSCode-specific config and exit early
+	dofile(vim.fn.stdpath("config") .. "/vscode.lua")
+	return
+end
+
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
@@ -617,11 +623,10 @@ require("lazy").setup({
 			formatters_by_ft = {
 				lua = { "stylua" },
 				-- Conform can also run multiple formatters sequentially
-				-- python = { "isort", "black" },
-				python = { "ruff" },
-				--
-				-- You can use 'stop_after_first' to run the first available formatter from the list
-				-- javascript = { "prettierd", "prettier", stop_after_first = true },
+				python = {
+					"ruff_fix", -- To fix lint errors.
+					"ruff_format", -- To run the formatter.
+				},
 			},
 		},
 	},
