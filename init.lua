@@ -545,6 +545,13 @@ require("lazy").setup({
 				},
 			}
 
+			-- Tell Neovim to recognize DockerfileCI as dockerfile filetype
+			vim.filetype.add({
+				filename = {
+					["DockerfileCI"] = "dockerfile",
+				},
+			})
+
 			-- Ensure the servers and tools above are installed
 			--
 			-- To check the current status of installed tools and/or manually install
