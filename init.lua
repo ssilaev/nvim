@@ -297,7 +297,7 @@ require("lazy").setup({
 			-- Space+key
 			vim.keymap.set("n", "<space>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
 			vim.keymap.set("n", "<space>sd", builtin.diagnostics, { desc = "[S]earch [D]iagnostics" })
-			vim.keymap.set("n", "<space>dd", vim.diagnostic.disable, { desc = "[D]iagnostics [D]isable" })
+			vim.keymap.set("n", "<space>di", vim.diagnostic.disable, { desc = "[D]iagnostics d[i]sable" })
 			vim.keymap.set("n", "<space>vd", vim.diagnostic.open_float, { desc = "[V]iew [D]iagnostic" })
 			vim.keymap.set("n", "<space>de", vim.diagnostic.enable, { desc = "[D]iagnostics [E]nable" })
 			vim.keymap.set("n", "<space>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
