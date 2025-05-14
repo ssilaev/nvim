@@ -38,6 +38,7 @@ This repository is updated from time to time..
 (`vim.g.have_nerd_font` in `init.lua`).
 * `python`
 * `go`
+* `ruff` linter and code formatter for python ([installation](https://github.com/astral-sh/ruff?tab=readme-ov-file#installation)) 
 * and any language you need.
 
 I believe that is all.
