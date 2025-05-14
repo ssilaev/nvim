@@ -303,6 +303,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<space>s.", builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
 			vim.keymap.set("n", "<space>sf", builtin.lsp_document_symbols, { noremap = true, silent = true })
 			vim.keymap.set("n", "<space>st", "<cmd>TodoTelescope<CR>", { noremap = true, silent = true })
+			vim.keymap.set("n", "<space>sm", builtin.marks, { noremap = true, silent = true })
 			vim.keymap.set("n", "<space><space>", builtin.buffers, { desc = "[\\] Find existing buffers" })
 
 			-- It's also possible to pass additional configuration options.
