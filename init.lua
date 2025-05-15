@@ -65,6 +65,11 @@ vim.keymap.set("x", "<C-Up>", "4<Up>", { noremap = true, silent = true })
 vim.keymap.set("x", "<C-Left>", "b", { noremap = true, silent = true })
 vim.keymap.set("x", "<C-Right>", "e", { noremap = true, silent = true })
 
+-- Switch between tabs with alt+num
+for i = 1, 9 do
+	vim.keymap.set("n", "<M-" .. i .. ">", i .. "gt", { noremap = true, silent = true })
+end
+
 -- Enable break indent
 vim.opt.breakindent = true
 
