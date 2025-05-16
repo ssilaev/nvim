@@ -20,8 +20,6 @@ vim.opt.langmap =
 -- Enable line numbers
 vim.opt.number = true
 
-vim.keymap.set("n", "<leader><F1>", "<cmd>set nu!<CR>", { noremap = true, silent = true })
-
 -- Disable mouse mode, I don't use it.
 vim.opt.mouse = ""
 
@@ -69,6 +67,66 @@ vim.keymap.set("x", "<C-Right>", "e", { noremap = true, silent = true })
 for i = 1, 9 do
 	vim.keymap.set("n", "<M-" .. i .. ">", i .. "gt", { noremap = true, silent = true })
 end
+
+-- Custom tabline
+vim.opt.tabline = "%!v:lua.TabLine()"
+
+-- Maximum length for a single tab entry
+local MAX_TAB_LENGTH = 40
+
+function _G.TabLine()
+	local s = ""
+	local current_tab = vim.fn.tabpagenr()
+	local total_tabs = vim.fn.tabpagenr("$")
+
+	for i = 1, total_tabs do
+		-- Set style for active and inactive tabs
+		local hl_group = (i == current_tab) and "%#TabLineSel#" or "%#TabLine#"
+
+		-- Get the buffer for the current tab
+		local win = vim.fn.tabpagewinnr(i)
+		local bufnr = vim.fn.tabpagebuflist(i)[win]
+
+		-- Get the full file path
+		local filepath = vim.fn.bufname(bufnr)
+
+		-- Show "[No Name]" for unsaved buffers
+		if filepath == "" then
+			filepath = "[No Name]"
+		else
+			-- Get the relative path
+			filepath = vim.fn.fnamemodify(filepath, ":.")
+			filepath = filepath:gsub("^%./", "")
+
+			-- Shorten the path if it is too long
+			if #filepath > MAX_TAB_LENGTH then
+				local parts = {}
+				for part in filepath:gmatch("[^/]+") do
+					-- Use the first 3 characters for folder name
+					table.insert(parts, part:sub(1, 3))
+				end
+
+				-- Reassemble the path
+				filepath = table.concat(parts, "/")
+
+				-- If the path is still too long, truncate it
+				if #filepath > MAX_TAB_LENGTH then
+					filepath = "…" .. filepath:sub(-MAX_TAB_LENGTH)
+				end
+			end
+		end
+
+		-- Add the tab index and the file path
+		s = s .. hl_group .. " " .. i .. ":" .. filepath .. " "
+	end
+
+	-- Add filler to align tabs properly
+	s = s .. "%#TabLineFill#"
+
+	return s
+end
+
+vim.keymap.set("n", "<leader><F1>", "<cmd>set nu!<CR>", { noremap = true, silent = true })
 
 -- Enable break indent
 vim.opt.breakindent = true
