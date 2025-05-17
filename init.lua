@@ -4,12 +4,6 @@
 vim.g.mapleader = "\\"
 vim.g.maplocalleader = "\\"
 
-if vim.g.vscode then
-	-- Load VSCode-specific config and exit early
-	dofile(vim.fn.stdpath("config") .. "/vscode.lua")
-	return
-end
-
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = false
 
