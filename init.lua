@@ -914,6 +914,16 @@ require("lazy").setup({
 	require("well.plugins.autopairs"),
 	require("well.plugins.aerial"),
 	require("well.plugins.harpoon"),
+	require("well.plugins.dadbod"),
+})
+
+-- For dadbod-completion
+local cmp = require("cmp")
+cmp.setup.filetype({ "sql" }, {
+	sources = {
+		{ name = "vim-dadbod-completion" },
+		{ name = "biffer" },
+	},
 })
 
 -- Harpoon
